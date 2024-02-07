@@ -1,0 +1,39 @@
+const mongoose = require ("mongoose");
+const PatientSchema = mongoose.Schema({
+    firstName:{
+        type:String,
+        required:true
+    },
+    lastName:{
+        type:String,
+        require:true
+    },
+    dateOfBirth:{
+        type:Date,
+    },
+    gender:{
+        type:String,
+        require:true
+    },
+    identificationNum:{
+        type:String,
+        required:true,
+        unique:true
+    },
+    vitals:[
+        {
+            date:{
+                type:Date,
+                default:Date.now
+            },
+            height:Number,
+            weight:Number,
+            bmi:Number,
+            generalHealth:String,
+            onDiet:String,
+            TakingDrugs:String,
+            comment:String
+        }
+    ]
+})
+module.exports = mongoose.model("PatientRecord",PatientSchema)
