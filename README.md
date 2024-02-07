@@ -37,7 +37,7 @@ This is a fullstack MERN project that entails  geting personal details from pati
 When deploying to cloud live platform you need to change the urls on the client side of the application to enable communication with the backend because the url use for development most of the time is local host which is locally hosted within the machine.
 For example
 ```js
- const res = await axios.get("https://restaurant.../api/...");
+ const res = await axios.get("https://.../api/...");
 ```
 Instead of 
 ```js
